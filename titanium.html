@@ -1,0 +1,400 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Titanium Collection</title>
+
+<link rel="stylesheet" href="css/style1.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts: Libre Baskerville + Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+
+<style>
+body {
+
+background: linear-gradient(to bottom, #f2f0ec, #e6dfd3);
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .slide {
+    width: 25%;
+    height: 100%;
+    position: relative;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    width: 80%;
+  }
+
+  .slide-content h1 { font-size: 3rem; margin: 0; letter-spacing: 3px; }
+  .slide-content p { font-size: 1.2rem; margin-top: 10px; }
+
+.titanium-collection {
+  padding: 40px;
+}
+
+.collection-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  color:  #cc9900;
+}
+
+.category {
+  background: #b3b300;
+  padding: 30px;
+  margin-bottom: 60px;
+  border-radius: 10px;
+}
+
+.category h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #a37d5d;
+  padding-bottom: 5px;
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.item {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 6px;
+}
+
+.item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.item p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.item .price {
+  display: block;
+  font-weight: bold;
+  color: #96774f;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 0.3s ease;
+}
+
+/* ✨ Price glow effect */
+text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+
+.item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  background-color: #ffccff;
+  filter: brightness(1.1)
+}
+
+.item:hover .price {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.lightbox span {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .item-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .item-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+{
+  /* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* mula sedikit ke bawah */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tambah ke semua item */
+.item {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0; /* start hidden */
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>CRYSTALISÉ</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li>
+            <a href="#collection">Collections</a>
+            <ul class="dropdown">
+                <li><a href="collectiongold.html">Gold</a></li>
+                <li><a href="silver.html">Silver</a></li>
+                <li><a href="titanium.html">Titanium</a></li>
+                <li><a href="comboset.html">Combo Sets</a></li>
+            </ul>
+        </li>
+
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="size.html">Measurement</a></li>
+    </ul>
+</nav>
+
+<div class="hero-slider">
+    <div class="slides" id="slider">
+      <div class="slide">
+        <img src="image/sil4.jpeg" alt="images">
+        <div class="slide-content">
+          <h1>Exclusive Titanium</h1>
+          <p>A Dazzling Touch of Titanium</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="image/sil5.jpeg" alt="images">
+        <div class="slide-content">
+          <h1>Crystalisé | Capture The Light.</h1>
+          <p>Classic and Modern for Every Design.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="image/sil6.jpeg" alt="images">
+        <div class="slide-content">
+          <h1>Our New Collections</h1>
+          <p>Check Out Our Latest Collection for This Month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section class="titanium-collection">
+<h2 class="collection-title">Titanium Collection</h2>
+
+<!-- RING -->
+<div class="category">
+<h3>Ring</h3>
+<div class="item-row">
+  <div class="item"><img src="image/Ring1.jpeg" onclick="openImg(this.src)"><p>Shining Star Ring<span class="price">RM 5,600</span></p></div>
+  <div class="item"><img src="image/Ring2.jpeg" onclick="openImg(this.src)"><p>Apple Bloom Ring<span class="price">RM 4,700</span></p></div>
+  <div class="item"><img src="image/Ring3.jpeg" onclick="openImg(this.src)"><p>Trois Trous Ring<span class="price">RM 4,200</span></p></div>
+  <div class="item"><img src="image/Ring4.jpeg" onclick="openImg(this.src)"><p>Celestial Ring<span class="price">RM 3,540</span></p></div>
+  <div class="item"><img src="image/Ring5.jpeg" onclick="openImg(this.src)"><p>The Twin Ring<span class="price">RM 4,700</span></p></div>
+  <div class="item"><img src="image/Ring6.jpeg" onclick="openImg(this.src)"><p>Black Hole Ring<span class="price">RM 2,350</span></p></div>
+</div>
+</div>
+
+<!-- NECKLACE -->
+<div class="category">
+<h3>Necklace</h3>
+<div class="item-row">
+  <div class="item"><img src="image/Necklace1.jpeg" onclick="openImg(this.src)"><p>Pierres Necklace<span class="price">RM 5,750</span></p></div>
+  <div class="item"><img src="image/Necklace2.jpeg" onclick="openImg(this.src)"><p>Lumere Necklace<span class="price">RM 3,200</span></p></div>
+  <div class="item"><img src="image/Necklace3.jpeg" onclick="openImg(this.src)"><p>Big Bang Necklace<span class="price">RM 4,700</span></p></div>
+  <div class="item"><img src="image/Necklace4.jpeg" onclick="openImg(this.src)"><p>Starlight Necklace<span class="price">RM 5,000</span></p></div>
+  <div class="item"><img src="image/Necklace5.jpeg" onclick="openImg(this.src)"><p>Remembering You Necklace<span class="price">RM 5,600</span></p></div>
+  <div class="item"><img src="image/Necklace6.jpeg" onclick="openImg(this.src)"><p>Stardust Necklace<span class="price">RM 4,500</span></p></div>
+</div>
+</div>
+
+<!-- EARRINGS -->
+<div class="category">
+<h3>Earrings</h3>
+<div class="item-row">
+  <div class="item"><img src="image/Earing1.jpeg" onclick="openImg(this.src)"><p>Little Noir Earrings<span class="price">RM 3,980</span></p></div>
+  <div class="item"><img src="image/Earing2.jpeg" onclick="openImg(this.src)"><p>Sleeping Luna Earrings<span class="price">RM 3,200</span></p></div>
+  <div class="item"><img src="image/Earing3.jpeg" onclick="openImg(this.src)"><p>Awakening Celestial Earrings<span class="price">RM 3,600</span></p></div>
+  <div class="item"><img src="image/Earing4.jpeg" onclick="openImg(this.src)"><p>Deep Ocean Earrings<span class="price">RM 3,900</span></p></div>
+  <div class="item"><img src="image/Earing5.jpeg" onclick="openImg(this.src)"><p>Puka Waena Earrings<span class="price">RM 4,200</span></p></div>
+  <div class="item"><img src="image/Earing6.jpeg" onclick="openImg(this.src)"><p>Grije Edelsteen Earrings<span class="price">RM 4,600</span></p></div>
+</div>
+</div>
+
+<!-- BRACELET -->
+<div class="category">
+<h3>Bracelet</h3>
+<div class="item-row">
+  <div class="item"><img src="image/Bracelet1.jpeg" onclick="openImg(this.src)"><p>White Almond Bracelet<span class="price">RM 3,100</span></p></div>
+  <div class="item"><img src="image/Bracelet2.jpeg" onclick="openImg(this.src)"><p>Deep Kiese Bracelet<span class="price">RM 3,400</span></p></div>
+  <div class="item"><img src="image/Bracelet3.jpeg" onclick="openImg(this.src)"><p>Stella Love Bracelet<span class="price">RM 3,800</span></p></div>
+  <div class="item"><img src="image/Bracelet4.jpeg" onclick="openImg(this.src)"><p>Charming Peach Bracelet<span class="price">RM 4,200</span></p></div>
+  <div class="item"><img src="image/Bracelet5.jpeg" onclick="openImg(this.src)"><p>Peach Bracelet<span class="price">RM 4,600</span></p></div>
+  <div class="item"><img src="image/Bracelet6.jpeg" onclick="openImg(this.src)"><p>Sparkly Pearl Bracelet<span class="price">RM 4,900</span></p></div>
+</div>
+</div>
+
+<!-- BANGLE -->
+<div class="category">
+<h3>Bangle</h3>
+<div class="item-row">
+  <div class="item"><img src="image/Bangle1.jpeg" onclick="openImg(this.src)"><p>Moana Bangle<span class="price">RM 3,700</span></p></div>
+  <div class="item"><img src="image/Bangle2.jpeg" onclick="openImg(this.src)"><p>Celestial Bangle<span class="price">RM 4,000</span></p></div>
+  <div class="item"><img src="image/Bangle3.jpeg" onclick="openImg(this.src)"><p>Glowish Gray Bangle<span class="price">RM 4,400</span></p></div>
+  <div class="item"><img src="image/Bangle4.jpeg" onclick="openImg(this.src)"><p>Moonlight Shine Bangle<span class="price">RM 4,690</span></p></div>
+  <div class="item"><img src="image/Bangle5.jpeg" onclick="openImg(this.src)"><p>Stella Luna Bangle<span class="price">RM 5,200</span></p></div>
+  <div class="item"><img src="image/Bangle6.jpeg" onclick="openImg(this.src)"><p>Gracing Sunshine Bangle<span class="price">RM 5,740</span></p></div>
+</div>
+</div>
+
+<!-- ANKLET -->
+<div class="category">
+<h3>Anklet</h3>
+<div class="item-row">
+  <div class="item"><img src="image/Anklet1.jpeg" onclick="openImg(this.src)"><p>Celestial Whisper Anklet<span class="price">RM 2,500</span></p></div>
+  <div class="item"><img src="image/Anklet2.jpeg" onclick="openImg(this.src)"><p>Celestial Charm Anklet<span class="price">RM 3,800</span></p></div>
+  <div class="item"><img src="image/Anklet3.jpeg" onclick="openImg(this.src)"><p>Aurora Shimmer Anklet<span class="price">RM 3,700</span></p></div>
+  <div class="item"><img src="image/Anklet4.jpeg" onclick="openImg(this.src)"><p>Pearl Waterfall Anklet<span class="price">RM 4,250</span></p></div>
+  <div class="item"><img src="image/Anklet5.jpeg" onclick="openImg(this.src)"><p>Stella Shimmer Anklet<span class="price">RM 2,900</span></p></div>
+  <div class="item"><img src="image/Anklet6.jpeg" onclick="openImg(this.src)"><p>Gray Halo Anklet<span class="price">RM 4,300</span></p></div>
+</div>
+</div>
+
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span onclick="closeImg()">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openImg(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+function closeImg() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+<script>
+    let currentSlide = 0;
+    const slider = document.getElementById('slider');
+    const totalSlides = 3;
+
+    function autoSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+    }
+    setInterval(autoSlide, 4000);
+
+   
+    function openImg(src) {
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = src;
+    }
+    function closeImg() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("lightbox")) { closeImg(); }
+    }
+  </script>
+
+  <!-- ABOUT -->
+<section class="about" id="about">
+    <h2 class="section-title">About Crystalisé</h2>
+
+    <p>
+        Crystalisé is a jewelry brand inspired by light, clarity, and timeless elegance.
+        Each piece is crafted to reflect beauty, confidence, and sophistication —
+        allowing you to truly capture the light.
+    </p>
+
+    <!-- FOLLOW US (HANYA DI ABOUT) -->
+    <div class="follow">
+        <h4>Follow Us</h4>
+
+        <a href="https://www.instagram.com/crystalise_0?igsh=MTR1bGs5dGV6OHRycQ%3D%3D&utm_source=qr" target="_blank"><img src="button/ig.jpeg" style="height: 100px;width: 100px;"></a>
+        <a href="https://www.facebook.com/share/1FwwXKrJkz/?mibextid=wwXIfr" target="_blank"><img src="button/fb.jpeg" style="height: 100px;width: 100px;"></a>
+        <a href="https://wa.me/601174841087" target="_blank"><img src="button/tel.jpeg" style="height: 100px;width: 100px;"></a>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Crystalisé | Capture the Light | Sofia Dina
+</footer>
+
+</body>
+</html>

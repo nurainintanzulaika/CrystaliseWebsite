@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gold Collection</title>
+
+<link rel="stylesheet" href="css/style1.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  :root {
+    --gold-primary: #96774f;
+    --gold-light: #c5a880;
+    --dark-bg: #1a1a1a;
+    --light-bg: #f2f0ec;
+  }
+
+{ box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--light-bg);
+    color: #333;
+    scroll-behavior: smooth;
+  }
+
+  
+  .hero-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .slide {
+    width: 25%;
+    height: 100%;
+    position: relative;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    width: 80%;
+  }
+
+  .slide-content h1 { font-size: 3rem; margin: 0; letter-spacing: 3px; }
+  .slide-content p { font-size: 1.2rem; margin-top: 10px; }
+
+ 
+  .silver-collection { padding: 60px 5%; }
+
+  .collection-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-primary);
+  }
+
+  .category {
+    background: white;
+    padding: 40px 25px;
+    margin-bottom: 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .category h3 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 24px;
+    border-left: 5px solid var(--gold-primary);
+    padding-left: 15px;
+    color: var(--gold-primary);
+  }
+
+  .item-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+
+  .item {
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 10px;
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .item::after {
+    content: "NEW";
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: var(--gold-primary);
+    color: white;
+    padding: 5px 30px;
+    font-size: 10px;
+    transform: rotate(45deg);
+  }
+
+  .price {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--gold-primary);
+    font-size: 16px;
+  }
+
+  .item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(150, 119, 79, 0.3);
+  }
+
+  
+  footer {
+    background: var(--dark-bg);
+    color: #bbb;
+    padding: 25px;
+    text-align: center;
+    font-size:14px; 
+  }
+ 
+
+  @media (max-width: 1200px) { .item-row { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 768px) { 
+    .item-row { grid-template-columns: repeat(2, 1fr); }
+    .hero-slider { height: 350px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>CRYSTALISÉ</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li>
+            <a href="#collection">Collections</a>
+            <ul class="dropdown">
+                <li><a href="collectiongold.html">Gold</a></li>
+                <li><a href="silver.html">Silver</a></li>
+                <li><a href="titanium.html">Titanium</a></li>
+                <li><a href="comboset.html">Combo Sets</a></li>
+            </ul>
+        </li>
+
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="size.html">Measurement</a></li>
+    </ul>
+</nav>
+
+  <div class="hero-slider">
+    <div class="slides" id="slider">
+      <div class="slide">
+        <img src="image/s4.jpg" alt="images">
+        <div class="slide-content">
+          <h1>Exclusive Gold</h1>
+          <p>A Dazzling Touch of Gold</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="image/s5.jpg" alt="images">
+        <div class="slide-content">
+          <h1>Crystalisé | Capture The Light.</h1>
+          <p>Classic and Modern for Every Design.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="image/s6.jpg" alt="images">
+        <div class="slide-content">
+          <h1>New Arrivals</h1>
+          <p>Check Out Our Latest Collection for This Month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="silver-collection">
+    <h2 class="collection-title">Gold Collection</h2>
+
+    <div class="category">
+      <h3>Ring</h3>
+      <div class="item-row">
+        <div class="item" onclick="openImg('image/rings1.jpeg')"><img src="image/rings1.jpeg"><span class="price">RM 6,299</span></div>
+        <div class="item" onclick="openImg('image/rings4.jpg')"><img src="image/rings4.jpg"><span class="price">RM 6,559</span></div>
+        <div class="item" onclick="openImg('image/rings3.jpeg')"><img src="image/rings3.jpeg"><span class="price">RM 5,569</span></div>
+        <div class="item" onclick="openImg('image/rings6.jpg')"><img src="image/rings6.jpg"><span class="price">RM 6,179</span></div>
+        <div class="item" onclick="openImg('image/rings7.jpg')"><img src="image/rings7.jpg"><span class="price">RM 6,489</span></div>
+        <div class="item" onclick="openImg('image/rings5.jpg')"><img src="image/rings5.jpg"><span class="price">RM 5,819</span></div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>Necklace</h3>
+      <div class="item-row">
+        <div class="item" onclick="openImg('image/neckles1.jpg')"><img src="image/neckles1.jpg"><span class="price">RM 5,769</span></div>
+        <div class="item" onclick="openImg('image/n1.jpg')"><img src="image/n1.jpg"><span class="price">RM 6,889</span></div>
+        <div class="item" onclick="openImg('image/neckles3.jpg')"><img src="image/neckles3.jpg"><span class="price">RM 7,299</span></div>
+        <div class="item" onclick="openImg('image/neckles4.jpg')"><img src="image/neckles4.jpg"><span class="price">RM 6,139</span></div>
+        <div class="item" onclick="openImg('image/n7.jpg')"><img src="image/n7.jpg"><span class="price">RM 5,999</span></div>
+        <div class="item" onclick="openImg('image/n8.jpg')"><img src="image/n8.jpg"><span class="price">RM 7,399</span></div>
+      </div>
+    </div>
+
+     <div class="category">
+      <h3>Earrings</h3>
+      <div class="item-row">
+        <div class="item" onclick="openImg('image/ear8.jpg')"><img src="image/ear8.jpg"><span class="price">RM 5,769</span></div>
+        <div class="item" onclick="openImg('image/ear2.jpg')"><img src="image/ear2.jpg"><span class="price">RM 6,889</span></div>
+        <div class="item" onclick="openImg('image/ear3.jpg')"><img src="image/ear3.jpg"><span class="price">RM 7,299</span></div>
+        <div class="item" onclick="openImg('image/ear7.jpg')"><img src="image/ear7.jpg"><span class="price">RM 6,139</span></div>
+        <div class="item" onclick="openImg('image/ear5.jpg')"><img src="image/ear5.jpg"><span class="price">RM 5,999</span></div>
+        <div class="item" onclick="openImg('image/ear6.jpg')"><img src="image/ear6.jpg"><span class="price">RM 7,399</span></div>
+      </div>
+    </div>
+
+    <div class="category">
+    <h3>Bracelet</h3>
+      <div class="item-row">
+        <div class="item" onclick="openImg('image/b1.jfif')"><img src="image/b1.jfif"><span class="price">RM 5,799</span></div>
+        <div class="item" onclick="openImg('image/b2.png')"><img src="image/b2.png"><span class="price">RM 6,800</span></div>
+        <div class="item" onclick="openImg('image/b3.jfif')"><img src="image/b3.jfif"><span class="price">RM 7,899</span></div>
+        <div class="item" onclick="openImg('image/b7.jpg')"><img src="image/b7.jpg"><span class="price">RM 7,139</span></div>
+        <div class="item" onclick="openImg('image/b5.jpg')"><img src="image/b5.jpg"><span class="price">RM 6,696</span></div>
+        <div class="item" onclick="openImg('image/b6.jpg')"><img src="image/b6.jpg"><span class="price">RM 7,399</span></div>
+      </div>
+    </div>
+
+    <div class="category">
+    <h3>Bangle</h3>
+      <div class="item-row">
+        <div class="item" onclick="openImg('image/bangles2.jpeg')"><img src="image/bangles2.jpeg"><span class="price">RM 6,999</span></div>
+        <div class="item" onclick="openImg('image/bangles1.jpeg')"><img src="image/bangles1.jpeg"><span class="price">RM 5,889</span></div>
+        <div class="item" onclick="openImg('image/bangles3.jpg')"><img src="image/bangles3.jpg"><span class="price">RM 7,329</span></div>
+        <div class="item" onclick="openImg('image/bangles7.jpg')"><img src="image/bangles7.jpg"><span class="price">RM 6,499</span></div>
+        <div class="item" onclick="openImg('image/bangles6.jpg')"><img src="image/bangles6.jpg"><span class="price">RM 5,559</span></div>
+        <div class="item" onclick="openImg('image/bangles4.jpg')"><img src="image/bangles4.jpg"><span class="price">RM 7,299</span></div>
+      </div>
+    </div>
+
+    <div class="category">
+    <h3>Anklet</h3>
+      <div class="item-row">
+        <div class="item" onclick="openImg('image/ankle1.jpg')"><img src="image/ankle1.jpg"><span class="price">RM 6,699</span></div>
+        <div class="item" onclick="openImg('image/ankle2.jpg')"><img src="image/ankle2.jpg"><span class="price">RM 6,999</span></div>
+        <div class="item" onclick="openImg('image/ankle3.jpg')"><img src="image/ankle3.jpg"><span class="price">RM 7,399</span></div>
+        <div class="item" onclick="openImg('image/ankle4.jpg')"><img src="image/ankle4.jpg"><span class="price">RM 5,999</span></div>
+        <div class="item" onclick="openImg('image/ankle5.jpg')"><img src="image/ankle5.jpg"><span class="price">RM 6,499</span></div>
+        <div class="item" onclick="openImg('image/ankle6.jpg')"><img src="image/ankle6.jpg"><span class="price">RM 7,369</span></div>
+      </div>
+    </div>
+
+  <script>
+    let currentSlide = 0;
+    const slider = document.getElementById('slider');
+    const totalSlides = 3;
+
+    function autoSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+    }
+    setInterval(autoSlide, 4000);
+
+   
+    function openImg(src) {
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = src;
+    }
+    function closeImg() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("lightbox")) { closeImg(); }
+    }
+  </script>
+
+  <!-- ABOUT -->
+<section class="about" id="about">
+    <h2 class="section-title">About Crystalisé</h2>
+
+    <p>
+        Crystalisé is a jewelry brand inspired by light, clarity, and timeless elegance.
+        Each piece is crafted to reflect beauty, confidence, and sophistication —
+        allowing you to truly capture the light.
+    </p>
+
+    <!-- FOLLOW US (HANYA DI ABOUT) -->
+    <div class="follow">
+        <h4>Follow Us</h4>
+
+        <a href="https://www.instagram.com/crystalise_0?igsh=MTR1bGs5dGV6OHRycQ%3D%3D&utm_source=qr" target="_blank"><img src="button/ig.jpeg" style="height: 100px;width: 100px;"></a>
+        <a href="https://www.facebook.com/share/1FwwXKrJkz/?mibextid=wwXIfr" target="_blank"><img src="button/fb.jpeg" style="height: 100px;width: 100px;"></a>
+        <a href="https://wa.me/601174841087" target="_blank"><img src="button/tel.jpeg" style="height: 100px;width: 100px;"></a>
+    </div>
+
+</section>
+
+  <!-- FOOTER -->
+<footer>
+    © 2026 Crystalisé | Capture the Light | Muhammad Danial Fitri
+</footer>
+
+</body>
+</html>
